@@ -1,0 +1,185 @@
+.d-none {
+    display: none!important;
+  }
+  
+.loader {
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 101;
+}
+  
+.navbar {
+    width: 100%;
+    height: 12vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100!important;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+    
+.logo {
+    width: 50px;
+    position: relative;
+    left: 20px;
+    z-index: 100!important;
+    cursor: pointer;
+}
+  
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    left: 100px;
+    gap: 20px;
+    z-index: 1;
+}
+  
+.navbtn {
+    font-size: 15px;
+    cursor: pointer;
+    color: #000;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    transition: 0.25s ease;
+}
+  
+.navigation:hover .navbtn {
+    color: #eee;
+}
+  
+.navigation:hover .navbtn:hover {
+    color: #000;
+    box-shadow: 0 2px 0 0 #ccc;
+}
+  
+.more {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    right: 20px;
+    background: #fff;
+    z-index: 100;
+}
+  
+.mode {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 20px;
+}
+  
+.admission {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+  
+.hamBurger {
+    display: none;
+    position: relative;
+    right: 20px;
+    z-index: 10;
+}
+  
+.navTools {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -101%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    z-index: 100;
+}
+  
+.navTools div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+  
+.navTools div a {
+    font-size: 40px;
+    color: #000;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+  
+.navTools div a:hover {
+    transform: scale(1.2);
+}
+  
+.close {
+    font-size: 70px;
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    z-index: 1000000000000;
+}
+
+@media only screen and (max-width: 768px) {
+    .hamBurger {
+        display: block;
+        position: relative;
+        right: 20px;
+    }
+  
+    .navigation {
+        width: 90vw;
+        height: 60vh;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        top: -100vh;
+        left: 5vw;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+  
+    .more {
+        width: 35vw;
+        position: relative;
+        left: 0%;
+    }
+  
+    .navTools div a {
+        font-size: 30px;
+    }
+}

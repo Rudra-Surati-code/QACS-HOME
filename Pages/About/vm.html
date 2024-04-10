@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vission & Mission</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="shortcut icon" href="../../Logo.png" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            width: 100%;
+            overflow-x: hidden;
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+
+        .heading {
+            width: 100vw;
+            height: 15vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #757575;
+        }
+
+        .body {
+            width: 100vw;
+            height: 65vh;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .box {
+            width: 45%;
+            padding: 30px 0;
+            border-radius: 20px;
+            box-shadow: 0 0 50px #ccc;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .bh {
+            font-size: 30px;
+        }
+
+        .box p {
+            width: 85%;
+            text-align: justify;
+            margin-top: 50px;
+            font-size: 20px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .body {
+                flex-direction: column;
+                margin-top: 20px;
+            }
+
+            .box {
+                width: 90%;
+            }
+
+            .box:last-child {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body onload="check()">
+    <section class="navbar">
+        <a href="/"><img src="../../Logo.png" alt="Logo" class="logo" /></a>
+        <div class="navigation">
+            <button class="navbtn hbtn">Home</button>
+            <button class="navbtn aubtn">About Us</button>
+            <button class="navbtn bbbtn">Benevolent Board</button>
+            <button class="navbtn acabtn">Academics</button>
+            <button class="navbtn actbtn">Activities</button>
+            <button class="navbtn magbtn">Magazine</button>
+            <button class="navbtn othbtn">Other</button>
+        </div>
+        <div class="more">
+            <button class="mode">
+                <i class="fa-solid fa-sun cl"></i>
+            </button>
+            <button class="admission">
+                Admission
+            </button>
+        </div>
+        <div class='hamBurger' onclick="showNav()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </section>
+    <div class="navTools">
+        <button class='close'>
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="home d-none">
+            <a class="ntbtn" href="/Pages/Home/Congregation.html">Congregation History</a>
+            <a class="ntbtn" href="/Pages/Home/History.html">School's History</a>
+        </div>
+        <div class="au d-none">
+            <a class="ntbtn" href="../About/vm.html">Vision & Mission</a>
+            <a class="ntbtn" href="../About/sm.html">School Motto</a>
+            <a class="ntbtn" href="../About/hs.html">School Theme</a>
+            <a class="ntbtn">House System</a>
+            <a class="ntbtn" href="../About/sc.html">Student Council</a>
+        </div>
+        <div class="bb d-none">
+            <a class="ntbtn">Manager's Missive</a>
+            <a class="ntbtn">Principal's Desk</a>
+        </div>
+        <div class="aca d-none">
+            <a class="ntbtn">School Working Hours</a>
+            <a class="ntbtn">Board Result</a>
+            <a class="ntbtn">General Proficiency</a>
+            <a class="ntbtn">Method of Testing & promotion</a>
+            <a class="ntbtn">Academic Syllabus</a>
+        </div>
+        <div class="act d-none">
+            <a class="ntbtn">Activities & Compitetion</a>
+            <a class="ntbtn">Events & Celebration</a>
+        </div>
+        <div class="mag d-none">
+            <a class="ntbtn">Teacher's Art & Craft</a>
+            <a class="ntbtn">Tachers's Creative Writing</a>
+            <a class="ntbtn">Students's Art & Craft</a>
+            <a class="ntbtn">Tachers's Creative Writing</a>
+        </div>
+        <div class="other d-none">
+            <a class="ntbtn">Facilities</a>
+            <a class="ntbtn">Awards & Achievements</a>
+            <a class="ntbtn">Calendar</a>
+            <a class="ntbtn">News & Updates</a>
+            <a class="ntbtn">Admission & Fee</a>
+            <a class="ntbtn">Angelites' Alumni</a>
+            <a class="ntbtn">Contact Us</a>
+            <a class="ntbtn">Online Fee Payment</a>
+        </div>
+    </div>
+
+    <div class="heading">
+        <h1>Vision & Mission</h1>
+    </div>
+
+    <div class="body">
+        <div class="box">
+            <div class="bh">Our Vision</div>
+            <p>Through  comprehensive  well programmed training, we aim at molding our students to be integrated with a well-balanced  personality,  having  a strong character, imbued with love and compassion towards others, courageous and outreaching in moments of crisis, astute and versatile in leadership roles.</p>
+        </div>
+
+        <div class="box">
+            <div class="bh">Our Mission</div>
+            <p>Our mission is to train and develop every Angelite with strong spiritual and ethical values  combined  with  an  all-round training, focusing on analytical thinking, and  creative  output  by  using  multi-disciplinary skills to face the ever changing, challenging and competitive world.</p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" ></script>
+    <script>
+        $(".mode").click(() => {
+            if(localStorage.getItem("dark") === "false") {
+                $(".cl").removeClass("fa-sun");
+                $(".cl").addClass("fa-moon");
+                localStorage.setItem("dark", "true")
+                darkedMode(true)
+            } else {
+                $(".cl").addClass("fa-sun");
+                $(".cl").removeClass("fa-moon");
+                localStorage.setItem("dark", "false")
+                darkedMode(false)
+            }
+        })
+
+        const check = () => {
+            if(localStorage.getItem("dark") === "true") {
+                $(".cl").removeClass("fa-sun");
+                $(".cl").addClass("fa-moon");
+                darkedMode(true)
+            } else {
+                $(".cl").addClass("fa-sun");
+                $(".cl").removeClass("fa-moon");
+                localStorage.setItem("dark", "false")
+                darkedMode(false)
+            }
+            $(".loader").addClass("d-none");
+        }
+
+        const showNav = () => {
+            if($(".hamBurger").hasClass("show")) {
+                $(".navigation").animate({position: "absolute", top: "-100vh"})
+                $('.hamBurger').removeClass("show")
+            } else {
+                $(".navigation").animate({position: "absolute", top: "12vh"})
+                $('.hamBurger').addClass("show")
+            }
+        }
+
+        const darkedMode = (isTrue) => {
+            if(isTrue == true) {
+                $("body").css({background: "#000"})
+                $(".loader").css({background: "#000"})
+                $(".navTools").css({background: "#000"})
+                $(".more").css({background: "#000"})
+                $(".mode").css({color: "#fff"})
+                $(".heading").css({color: "#fff"})
+                $(".navbtn").css({color: "#fff"})
+                $(".text").css({color: "#fff"})
+                $(".close").css({color: "#fff"})
+                $(".ntbtn").css({color: "#fff"})
+                $(".body").css({color: "#fff"})
+                $(".hamBurger").css({color: "#fff"})
+                $(".admission").css({color: "#000", background: "#fff"})
+                $(".navigation").css({ background: "#000"})
+                $(".box").css({boxShadow: "0 0 10px #fff"})
+            } else if(isTrue == false) {
+                $("body").css({background: "#fff"})
+                $(".loader").css({background: "#fff"})
+                $(".navTools").css({background: "#fff"})
+                $(".more").css({background: "#fff"})
+                $(".mode").css({color: "#000"})
+                $(".heading").css({color: "#000"})
+                $(".navbtn").css({color: "#000"})
+                $(".text").css({color: "#000"})
+                $(".close").css({color: "#000"})
+                $(".ntbtn").css({color: "#000"})
+                $(".body").css({color: "#000"})
+                $(".hamBurger").css({color: "#000"})
+                $(".admission").css({color: "#fff", background: "#000"})
+                $(".navigation").css({ background: "#fff"})
+                $(".box").css({boxShadow: "0 0 50px #ccc"})
+            }
+        }
+
+        $(".close").click(() => {
+            $(".home").addClass("d-none");
+            $(".au").addClass("d-none");
+            $(".bb").addClass("d-none");
+            $(".aca").addClass("d-none");
+            $(".act").addClass("d-none");
+            $(".mag").addClass("d-none");
+            $(".other").addClass("d-none");
+            $(".navTools").animate({left: "-100%"})
+            })
+
+        $(".hbtn").click(() => {
+            $(".navTools").animate({left: "0%"})
+            $(".home").removeClass("d-none");
+        })
+
+        $(".aubtn").click(() => {
+            $(".navTools").animate({left: "0%"})
+            $(".au").removeClass("d-none");
+        })
+
+        $(".bbbtn").click(() => {
+            $(".navTools").animate({left: "0%"})
+            $(".bb").removeClass("d-none");
+        })
+
+        $(".acabtn").click(() => {
+            $(".navTools").animate({left: "0%"})
+            $(".aca").removeClass("d-none");
+        })
+
+        $(".actbtn").click(() => {
+            $(".navTools").animate({left: "0%"})
+            $(".act").removeClass("d-none");
+        })
+
+        $(".magbtn").click(() => {
+            $(".navTools").animate({left: "0%"})
+            $(".mag").removeClass("d-none");
+        })
+
+        $(".othbtn").click(() => {
+            $(".navTools").animate({left: "0%"})
+            $(".other").removeClass("d-none");
+        })
+    </script>
+</body>
+</html>
