@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../navbar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="shortcut icon" href="../../Logo.png" type="image/x-icon">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "Roboto", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    body, main {
+      height: 100vh;
+      width: 100vw;
+      background-color: #000;
+      overflow-x: hidden;
+    }
+    
+    main {
+      height: 88vh!important;
+      background-image: url(/Images/1.jpg);
+      background-size: cover;
+      background-position: center 0%;
+      position: relative;
+      z-index: 2;
+      transition: transform 500ms cubic-bezier(.13, .53, .38, .97);
+    }
+
+    #nav-toggle {
+      width: 4rem;
+      height: 4rem;
+      position: fixed;
+      z-index: 3;
+      left: 50%;
+      bottom: 3rem;
+      border: none;
+      outline: none;
+      border-radius: 6rem;
+      transform: translateX(-50%);
+      background-color: rgb(182, 142, 113);
+      cursor: pointer;
+      box-shadow: 0rem 0rem 4rem rgba(0 0 0 / 35%);
+      transition: transform, background-color;
+      transition-timing-function: ease;
+      transition-duration: 400ms;
+      font-size: 20px;
+    }
+
+    #nav-toggle:hover {
+      transform: translateX(-50%) scale(1.04);
+    }
+
+    #nav-toggle:active {
+      transform: translateX(-50%) scale(0.96);
+    }
+    
+    body[data-nav="true"] > main {
+      transform: translateY(-70%);
+    }
+
+    #track > .trackImage {
+      width: 300px;
+      height: 400px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 10px;
+    }
+
+    #track {
+      width: 100vw;
+      display: flex;
+      gap: 4vmin;
+      position: absolute;
+      z-index: 1;
+      transform: translate(0%, 0%);
+      bottom: 20px;
+      left: 5%;
+    }
+
+    .navCar {
+      width: 100vw;
+      height: 20vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 80px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .fa-caret-left {
+      position: relative;
+      left: 30px;
+      cursor: pointer;
+      transition: left;
+      transition-timing-function: ease;
+      transition-duration: 400ms;
+    }
+
+    .fa-caret-left:hover {
+      position: relative;
+      left: 40px;
+    }
+    .fa-caret-left:active {
+      position: relative;
+      left: 20px;
+    }
+
+    .fa-caret-right {
+      position: relative;
+      right: 30px;
+      cursor: pointer;
+      transition: right;
+      transition-timing-function: ease;
+      transition-duration: 400ms;
+    }
+
+    .fa-caret-right:hover {
+      position: relative;
+      right: 40px;
+    }
+    .fa-caret-right:active {
+      position: relative;
+      right: 20px;
+    }
+  </style>
+</head>
+<body data-nav="false" onload="check()">
+    <section class="navbar">
+      <a href="../index.html"><img src="../Logo.png" alt="Logo" class="logo" /></a>
+      <div class="navigation">
+          <button class="navbtn hbtn">Home</button>
+          <button class="navbtn aubtn">About Us</button>
+          <button class="navbtn bbbtn">Benevolent Board</button>
+          <button class="navbtn acabtn">Academics</button>
+          <button class="navbtn actbtn">Activities</button>
+          <button class="navbtn magbtn">Magazine</button>
+          <button class="navbtn othbtn">Other</button>
+      </div>
+      <div class="more">
+          <button class="mode">
+              <i class="fa-solid fa-sun cl"></i>
+          </button>
+          <button class="admission">
+              Admission
+          </button>
+      </div>
+      <div class='hamBurger' onclick="showNav()">
+          <i class="fa-solid fa-bars"></i>
+      </div>
+  </section>
+  <div class="navTools">
+      <button class='close'>
+          <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="home d-none">
+          <a class="ntbtn" href="./Home/Congregation.html">Congregation History</a>
+          <a class="ntbtn" href="./Home/History.html">School's History</a>
+      </div>
+      <div class="au d-none">
+          <a class="ntbtn" href="./About/vm.html">Vision & Mission</a>
+          <a class="ntbtn" href="./About/sm.html">School Motto</a>
+          <a class="ntbtn">School Theme</a>
+          <a class="ntbtn" href="./About/hs.html">House System</a>
+          <a class="ntbtn" href="./About/sc.html">Student Council</a>
+      </div>
+      <div class="bb d-none">
+          <a class="ntbtn">Manager's Missive</a>
+          <a class="ntbtn">Principal's Desk</a>
+      </div>
+      <div class="aca d-none">
+          <a class="ntbtn">School Working Hours</a>
+          <a class="ntbtn">Board Result</a>
+          <a class="ntbtn">General Proficiency</a>
+          <a class="ntbtn">Method of Testing & promotion</a>
+          <a class="ntbtn">Academic Syllabus</a>
+      </div>
+      <div class="act d-none">
+          <a class="ntbtn">Activities & Compitetion</a>
+          <a class="ntbtn">Events & Celebration</a>
+      </div>
+      <div class="mag d-none">
+          <a class="ntbtn">Teacher's Art & Craft</a>
+          <a class="ntbtn">Tachers's Creative Writing</a>
+          <a class="ntbtn">Students's Art & Craft</a>
+          <a class="ntbtn">Tachers's Creative Writing</a>
+      </div>
+      <div class="other d-none">
+          <a class="ntbtn">Facilities</a>
+          <a class="ntbtn">Awards & Achievements</a>
+          <a class="ntbtn">Calendar</a>
+          <a class="ntbtn">News & Updates</a>
+          <a class="ntbtn">Admission & Fee</a>
+          <a class="ntbtn" href="./">Gallery</a>
+          <a class="ntbtn">Angelites' Alumni</a>
+          <a class="ntbtn">Contact Us</a>
+          <a class="ntbtn" href="https://icici.myclassboard.com/" target="_qacs">Online Fee Payment</a>
+      </div>
+  </div>
+  <main>
+    <div class="navCar">
+      <i class="fa-solid fa-caret-left" onclick="shift('left')"></i>
+      <i class="fa-solid fa-caret-right" onclick="shift('right')"></i>
+    </div>
+  </main>
+
+  <button id="nav-toggle" onclick="toggleNav()">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <div id="track" data-mouse-down-at="0" data-prev-percentage="0">
+    
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" ></script>
+  <script>
+    const toggleNav = () => {
+      document.body.dataset.nav = document.body.dataset.nav == "true" ? "false" : "true";
+    }
+
+    const images = [
+      "1.jpg",
+      "2.jpg",
+      "3.jpg",
+      "4.jpg",
+      "5.jpg",
+      "6.jpg",
+      "7.jpg",
+      "8.jpg",
+      "9.jpg",
+      "10.jpg",
+    ]
+
+    const track = document.getElementById('track');
+
+    const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
+
+    const handleOnUp = () => {
+      track.dataset.mouseDownAt = "0";  
+      track.dataset.prevPercentage = track.dataset.percentage;
+    }
+
+    const handleOnMove = e => {
+      if(track.dataset.mouseDownAt === "0") return;
+      
+      const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+            maxDelta = window.innerWidth / 2;
+      
+      const percentage = (mouseDelta / maxDelta) * -135,
+            nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
+            nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -135);
+      
+      track.dataset.percentage = nextPercentage;
+      
+      track.animate({
+        transform: `translate(${nextPercentage}%, 0%)`
+      }, { duration: 1200, fill: "forwards" });
+      
+      // for(const image of track.getElementsByClassName("trackImage")) {
+      //   image.animate({
+      //     objectPosition: `${(60 + nextPercentage)}% center`,
+      //   }, { duration: 1200, fill: "forwards" });
+      // }
+    }
+
+    /* -- Had to add extra lines for touch events -- */
+
+    track.onmousedown = e => handleOnDown(e);
+
+    track.ontouchstart = e => handleOnDown(e.touches[0]);
+
+    track.onmouseup = e => handleOnUp(e);
+
+    track.ontouchend = e => handleOnUp(e.touches[0]);
+
+    track.onmousemove = e => handleOnMove(e);
+
+    track.ontouchmove = e => handleOnMove(e.touches[0]);
+
+    $(".mode").click(() => {
+            if(localStorage.getItem("dark") === "false") {
+                $(".cl").removeClass("fa-sun");
+                $(".cl").addClass("fa-moon");
+                localStorage.setItem("dark", "true")
+                darkedMode(true)
+            } else {
+                $(".cl").addClass("fa-sun");
+                $(".cl").removeClass("fa-moon");
+                localStorage.setItem("dark", "false")
+                darkedMode(false)
+            }
+        })
+
+        
+
+        const cii = (i) => {
+          document.querySelector("main").style.backgroundImage = `url("/Images/${i+1}.jpg")`
+        }
+
+        const check = () => {
+            if(localStorage.getItem("dark") === "true") {
+                $(".cl").removeClass("fa-sun");
+                $(".cl").addClass("fa-moon");
+                darkedMode(true)
+            } else {
+                $(".cl").addClass("fa-sun");
+                $(".cl").removeClass("fa-moon");
+                localStorage.setItem("dark", "false")
+                darkedMode(false)
+            }
+            $(".loader").addClass("d-none");
+            for (let i = 0; i < images.length; i++) {
+              const img = document.createElement('img');
+              img.src = `./Images/${images[i]}`;
+              img.classList.add('trackImage');
+              img.draggable = false;
+              track.appendChild(img);
+              img.onclick = () => cii(i)
+            }
+        }
+
+        const darkedMode = (isTrue) => {
+            if(isTrue == true) {
+                $(".loader").css({background: "#000"})
+                $(".switch").css({background: "#fff"})
+                $(".navTools").css({background: "#000"})
+                $(".navbar").css({background: "#000"})
+                $(".more").css({background: "#000"})
+                $(".mode").css({color: "#fff"})
+                $(".navbtn").css({color: "#fff"})
+                $(".close").css({color: "#fff"})
+                $(".ntbtn").css({color: "#fff"})
+                $(".hamBurger").css({color: "#fff"})
+                $(".round").css({border: "1px solid #fff"})
+                $(".switchOutline").css({border: "1px solid #fff"})
+                $(".admission").css({color: "#000", background: "#fff"})
+                $(".navigation").css({ background: "#000"})
+            } else if(isTrue == false) {
+                $(".switch").css({background: "#000"})
+                $(".loader").css({background: "#fff"})
+                $(".more").css({background: "#fff"})
+                $(".navTools").css({background: "#fff"})
+                $(".navbar").css({background: "#fff"})
+                $(".navbtn").css({color: "#000"})
+                $(".mode").css({color: "#000"})
+                $(".text").css({color: "#000"})
+                $(".close").css({color: "#000"})
+                $(".ntbtn").css({color: "#000"})
+                $(".hamBurger").css({color: "#000"})
+                $(".round").css({border: "1px solid #000"})
+                $(".switchOutline").css({border: "1px solid #000"})
+                $(".admission").css({color: "#fff", background: "#000"})
+                $(".navigation").css({ background: "#fff"})
+            }
+        }
+
+        $(".close").click(() => {
+            $(".home").addClass("d-none");
+            $(".au").addClass("d-none");
+            $(".bb").addClass("d-none");
+            $(".aca").addClass("d-none");
+            $(".act").addClass("d-none");
+            $(".mag").addClass("d-none");
+            $(".other").addClass("d-none");
+            $(".navTools").animate({left: "-100%"})
+            })
+
+        $(".hbtn").click(() => {
+            $(".navTools").animate({left: "0%"})
+            $(".home").removeClass("d-none");
+        })
+
+        $(".aubtn").click(() => {
+            $(".navTools").animate({left: "0%"})
+            $(".au").removeClass("d-none");
+        })
+
+        $(".bbbtn").click(() => {
+            $(".navTools").animate({left: "0%"})
+            $(".bb").removeClass("d-none");
+        })
+
+        $(".acabtn").click(() => {
+            $(".navTools").animate({left: "0%"})
+            $(".aca").removeClass("d-none");
+        })
+
+        $(".actbtn").click(() => {
+            $(".navTools").animate({left: "0%"})
+            $(".act").removeClass("d-none");
+        })
+
+        $(".magbtn").click(() => {
+            $(".navTools").animate({left: "0%"})
+            $(".mag").removeClass("d-none");
+        })
+
+        $(".othbtn").click(() => {
+            $(".navTools").animate({left: "0%"})
+            $(".other").removeClass("d-none");
+        })
+
+        let imgNum = 1;
+
+        const shift = (pos) => {
+          if(pos === "left") {
+            imgNum--;
+            if(imgNum < 1) {
+              imgNum = images.length;
+            }
+          } else {
+            imgNum++;
+            if(imgNum > images.length) {
+              imgNum = 1;
+            }
+          }
+
+          document.querySelector("main").style.backgroundImage = `url("/Images/${imgNum}.jpg")`
+        }
+  </script>
+</body>
+</html>

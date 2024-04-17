@@ -23,6 +23,7 @@
     position: relative;
     top: 0;
     left: 0;
+    background-color: #fff;
 }
     
 .logo {
@@ -52,10 +53,6 @@
     outline: none;
     background-color: transparent;
     transition: 0.25s ease;
-}
-  
-.navigation:hover .navbtn {
-    color: #eee;
 }
   
 .navigation:hover .navbtn:hover {
